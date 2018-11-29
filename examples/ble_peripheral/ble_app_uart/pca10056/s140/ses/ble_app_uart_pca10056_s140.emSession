@@ -62,13 +62,13 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="708" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../main.c" selected="0" top="683" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="41" y="549" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../main.c" selected="1" top="527" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="228" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/mdk/nrf52840_peripherals.h" selected="0" top="207" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="164" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_error.h" selected="0" top="139" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="72" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_error.c" selected="0" top="45" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="55" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_error_weak.c" selected="0" top="46" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="25" y="157" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/uart/app_uart.h" selected="0" top="128" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="23" y="161" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/uart/app_uart_fifo.c" selected="0" top="135" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="157" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/uart/app_uart.h" selected="0" top="128" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="161" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/uart/app_uart_fifo.c" selected="0" top="135" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="104" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/boards/pca10056.h" selected="0" top="86" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="0" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/libraries/util/app_util_platform.c" selected="0" top="90" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="513" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/hal/nrf_gpio.h" selected="0" top="495" codecName="Default"/>
@@ -80,7 +80,7 @@
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="45" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../integration/nrfx/legacy/nrf_drv_uart.h" selected="0" top="30" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="484" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/hal/nrf_uarte.h" selected="0" top="465" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="1272" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../integration/nrfx/legacy/apply_old_config.h" selected="0" top="1257" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="226" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/drivers/src/nrfx_uarte.c" selected="1" top="209" codecName=""/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="226" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/drivers/src/nrfx_uarte.c" selected="0" top="263" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="ble_app_uart_pca10056_s140" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <ARMCrossStudioWindow activeProject="ble_app_uart_pca10056_s140" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

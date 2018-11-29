@@ -57,12 +57,12 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="17" y="47" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../main.c" selected="0" top="86" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="47" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../main.c" selected="0" top="35" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="67" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../integration/nrfx/legacy/nrf_drv_power.c" selected="0" top="67" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="86" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/boards/pca10056.h" selected="0" top="65" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="149" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../modules/nrfx/hal/nrf_uart.h" selected="0" top="139" codecName="Default"/>
-  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="392" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/toolchain/cmsis/include/cmsis_gcc.h" selected="0" top="382" codecName=""/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="0" y="392" useTextEdit="1" useBinaryEdit="0" left="0" path="../../../../../../components/toolchain/cmsis/include/cmsis_gcc.h" selected="0" top="382" codecName="Default"/>
   <SessionOpenFile windowGroup="DockEditLeft" x="0" y="33" useTextEdit="1" useBinaryEdit="0" left="0" path="../config/sdk_config.h" selected="1" top="0" codecName="Default"/>
  </Files>
- <ARMCrossStudioWindow activeProject="serial_pca10056" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <ARMCrossStudioWindow activeProject="serial_pca10056" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Debug" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3199"/>
 </session>

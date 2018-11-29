@@ -55,6 +55,7 @@
 #include "nrf_delay.h"
 #include "nrf.h"
 #include "bsp.h"
+#include "boards.h"
 #if defined (UART_PRESENT)
 #include "nrf_uart.h"
 #endif
@@ -71,6 +72,8 @@
 
 void uart_error_handle(app_uart_evt_t * p_event)
 {
+    static uint8_t receive_data[10];
+    static uint8_t index = 0;
     if (p_event->evt_type == APP_UART_COMMUNICATION_ERROR)
     {
         APP_ERROR_HANDLER(p_event->data.error_communication);
@@ -78,6 +81,16 @@ void uart_error_handle(app_uart_evt_t * p_event)
     else if (p_event->evt_type == APP_UART_FIFO_ERROR)
     {
         APP_ERROR_HANDLER(p_event->data.error_code);
+    }
+    else if (p_event->evt_type == APP_UART_DATA_READY)
+    {
+        UNUSED_VARIABLE(app_uart_get(&receive_data[index]));
+        bsp_board_led_invert(0);
+        index++;
+        if(index >= 10)
+        {
+            index = 0;
+        }
     }
 }
 
@@ -128,20 +141,20 @@ static void uart_loopback_test()
 /* When UART is used for communication with the host do not use flow control.*/
 #define UART_HWFC APP_UART_FLOW_CONTROL_DISABLED
 #endif
-
-void set_high_voltage_dcdc_mode() {
-  if (NRF_UICR->REGOUT0 != UICR_REGOUT0_VOUT_3V3) {
-    NRF_NVMC->CONFIG = NVMC_CONFIG_WEN_Wen << NVMC_CONFIG_WEN_Pos;
-    while (NRF_NVMC->READY == NVMC_READY_READY_Busy) {
-    }
-    NRF_UICR->REGOUT0 = UICR_REGOUT0_VOUT_3V3;
-
-    NRF_NVMC->CONFIG = NVMC_CONFIG_WEN_Ren << NVMC_CONFIG_WEN_Pos;
-    while (NRF_NVMC->READY == NVMC_READY_READY_Busy) {
-    }
-    NVIC_SystemReset();
-  }
-}
+//
+//void set_high_voltage_dcdc_mode() {
+//  if (NRF_UICR->REGOUT0 != UICR_REGOUT0_VOUT_3V3) {
+//    NRF_NVMC->CONFIG = NVMC_CONFIG_WEN_Wen << NVMC_CONFIG_WEN_Pos;
+//    while (NRF_NVMC->READY == NVMC_READY_READY_Busy) {
+//    }
+//    NRF_UICR->REGOUT0 = UICR_REGOUT0_VOUT_3V3;
+//
+//    NRF_NVMC->CONFIG = NVMC_CONFIG_WEN_Ren << NVMC_CONFIG_WEN_Pos;
+//    while (NRF_NVMC->READY == NVMC_READY_READY_Busy) {
+//    }
+//    NVIC_SystemReset();
+//  }
+//}
 
 
 /**
@@ -150,33 +163,33 @@ void set_high_voltage_dcdc_mode() {
 int main(void)
 {
     uint32_t err_code;
-    set_high_voltage_dcdc_mode();
+//    set_high_voltage_dcdc_mode();
     bsp_board_init(BSP_INIT_LEDS);
 
     const app_uart_comm_params_t comm_params =
-      {
-          RX_PIN_NUMBER,
-          TX_PIN_NUMBER,
-          RTS_PIN_NUMBER,
-          CTS_PIN_NUMBER,
-          UART_HWFC,
-          false,
-#if defined (UART_PRESENT)
-          NRF_UART_BAUDRATE_115200
-#else
-          NRF_UARTE_BAUDRATE_115200
-#endif
-      };
+     {
+         RX_PIN_NUMBER,
+         TX_PIN_NUMBER,
+         UART_PIN_DISCONNECTED,
+         UART_PIN_DISCONNECTED,
+         UART_HWFC,
+         false,
+    #if defined (UART_PRESENT)
+         NRF_UART_BAUDRATE_9600
+    #else
+         NRF_UARTE_BAUDRATE_115200
+    #endif
+     };
 
     APP_UART_FIFO_INIT(&comm_params,
-                         UART_RX_BUF_SIZE,
-                         UART_TX_BUF_SIZE,
-                         uart_error_handle,
-                         APP_IRQ_PRIORITY_LOWEST,
-                         err_code);
+                        UART_RX_BUF_SIZE,
+                        UART_TX_BUF_SIZE,
+                        uart_error_handle,
+                        APP_IRQ_PRIORITY_LOWEST,
+                        err_code);
 
     APP_ERROR_CHECK(err_code);
-
+ 
 #ifndef ENABLE_LOOPBACK_TEST
     printf("\r\nUART example started.\r\n");
 
@@ -187,17 +200,18 @@ int main(void)
 //        while (app_uart_put(cr) != NRF_SUCCESS);
         app_uart_put(1);
         nrf_delay_ms(1000);
+        bsp_board_led_invert(2);
 
 
-        if (cr == 'q' || cr == 'Q')
-        {
-            printf(" \r\nExit!\r\n");
-
-            while (true)
-            {
-                // Do nothing.
-            }
-        }
+//        if (cr == 'q' || cr == 'Q')
+//        {
+//            printf(" \r\nExit!\r\n");
+//
+//            while (true)
+//            {
+//                // Do nothing.
+//            }
+//        }
     }
 #else
 
