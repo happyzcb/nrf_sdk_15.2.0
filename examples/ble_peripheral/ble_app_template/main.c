@@ -728,6 +728,7 @@ int main(void)
     // Enter main loop.
     for (;;)
     {
+        NRF_LOG_INFO("testtest");
         idle_state_handle();
     }
 }
